@@ -4,13 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
+var mongoose = require('mongoose');
+const Handlebars = require('handlebars')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 var indexRouter = require('./routes/index'); 
 
 var app = express();
 
+mongoose.connect('mongodb://localhost:27017/shopping', { useNewUrlParser: true });
+
 // view engine setup
-app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
+app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs',  handlebars: allowInsecurePrototypeAccess(Handlebars)}));
 app.set('view engine', '.hbs');
 
 app.use(logger('dev'));
