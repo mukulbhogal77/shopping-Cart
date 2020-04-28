@@ -8,6 +8,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@handlebars/allow-prototype-access": "^1.0.3",
+    "acorn": "^5.7.4",
     "bcrypt-nodejs": "0.0.3",
     "bootstrap": "^4.4.1",
     "connect-flash": "^0.1.1",
@@ -28,6 +29,6 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "handlebars": "^4.5.0"
+    "handlebars": "^4.7.6"
   }
 }
