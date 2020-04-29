@@ -1,1 +1,28 @@
-<h3> User Profile </h3>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>User Profile</h1>
+        <hr>
+        <h2>My Orders</h2>
+        {{# each orders }}
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            {{# each this.items }}
+                            <li class="list-group-item">
+                                <h4> <span class="badge badge-secondary pull-right" > ${{ this.price }} </span>  </h4>
+                                {{ this.item.title }} | {{ this.qty }} Units
+                            </li>
+                            {{/each}}
+                        </ul> 
+                    </div>
+                    <div class="panel-footer">
+                        <h2><span class="badge badge-secondary" > Total Price: ${{ this.cart.totalPrice }} </span></h2> 
+                    </div>  
+                    <hr>
+                </div>
+            </div>
+        {{/each}}
+        
+    </div>
+</div>
